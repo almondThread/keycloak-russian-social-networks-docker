@@ -15,7 +15,7 @@ RUN cd /opt/jboss/ && curl -L https://downloads.jboss.org/keycloak/$KEYCLOAK_VER
 
 ADD docker-entrypoint.sh /opt/jboss/
 
-ADD target/* /opt/jboss/keycloak/
+ADD target/ /opt/jboss/keycloak/
 
 ADD cli /opt/jboss/keycloak/cli
 RUN cd /opt/jboss/keycloak && bin/jboss-cli.sh --file=cli/standalone-configuration.cli && rm -rf /opt/jboss/keycloak/standalone/configuration/standalone_xml_history
